@@ -12,4 +12,12 @@ public class Seat {
     public void reserveSeat() {
         reserved = true;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
 }
