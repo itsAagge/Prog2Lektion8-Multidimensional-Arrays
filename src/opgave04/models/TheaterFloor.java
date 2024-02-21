@@ -11,6 +11,10 @@ public class TheaterFloor {
         return null;
     }
 
+    public double reservedProcent() {
+        return 0;
+    }
+
     public void makeReservation(Seat[] seats) {
 
     }
