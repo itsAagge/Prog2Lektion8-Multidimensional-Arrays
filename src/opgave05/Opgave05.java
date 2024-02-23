@@ -12,7 +12,14 @@ public class Opgave05 {
                 { 5, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0 }
         };
     Absence absence = new Absence(a);
-
+    absence.print();
+    System.out.println("Total fravær for student 5: " + absence.totalAbsence(5));
+    System.out.println("Gennemsnitligt fravær for student 5: " + absence.average(5));
+    System.out.println("Antal studerende uden fravær: " + absence.StudentsWithoutAbsence());
+    System.out.println("Elev med mest fravær: " + absence.mostAbsence());
+    System.out.println("Reset fravær for elev 5");
+    absence.reset(5);
+    absence.print();
     }
 
 }

@@ -19,7 +19,10 @@ public class TheaterFloor {
      */
 
     public boolean buySeat(int row, int seat) {
-        // TODO
+        if (seats[row][seat] != 0) {
+            seats[row][seat] = 0;
+            return true;
+        }
         return false;
     }
 
@@ -32,13 +35,36 @@ public class TheaterFloor {
      * @return
      */
     public boolean buySeat(int price) {
-        // TODO
+        for (int i = 0; i < seats.length; i++) {
+            for (int j = 0; j < seats[i].length; j++) {
+                if (seats[i][j] == price) {
+                    seats[i][j] = 0;
+                    return true;
+                }
+            }
+        }
         return false;
-
     }
 
     public void printTheaterFloor() {
-        // TODO
+        System.out.println("De ledige pladser er angivet med deres pris");
+        System.out.printf("%11s", "Sæde  :");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%5s", i);
+        }
+        System.out.println();
+        System.out.println("              -----------------------------------------------");
+        for (int i = 0; i < seats.length; i++) {
+            System.out.printf("%11s", "Række " + (i + 1) + "  :");
+            for (int j = 0; j < seats[i].length; j++) {
+                if (seats[i][j] != 0) {
+                    System.out.printf("%5s", seats[i][j]);
+                } else {
+                    System.out.printf("%5s", "--");
+                }
+            }
+            System.out.println();
+        }
     }
 }
 
