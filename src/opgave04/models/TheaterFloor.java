@@ -19,8 +19,8 @@ public class TheaterFloor {
      */
 
     public boolean buySeat(int row, int seat) {
-        if (seats[row][seat] != 0) {
-            seats[row][seat] = 0;
+        if (seats[row - 1][seat - 1] != 0) {
+            seats[row - 1][seat - 1] = 0;
             return true;
         }
         return false;

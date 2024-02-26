@@ -20,30 +20,25 @@ public class TwoDimensionalIntArray {
 
     public int sumRow(int row) {
         int sum = 0;
-        for (int i = 0; i < intArray[row].length; i++) {
-            sum += intArray[row][i];
+        for (int i : intArray[row]) {
+            sum += i;
         }
         return sum;
     }
 
     public int sumColumn(int column) {
         int sum = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            for (int j = 0; j < intArray[i].length; j++) {
-                if (j == column) {
-                    sum += intArray[i][j];
-                }
-            }
+        for (int[] ints : intArray) {
+            sum += ints[column];
         }
         return sum;
     }
 
     public int sumAll() {
         int sum = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            for (int j = 0; j < intArray[i].length; j++) {
-                int temp = intArray[i][j];
-                sum += temp;
+        for (int[] ints : intArray) {
+            for (int anInt : ints) {
+                sum += anInt;
             }
         }
         return sum;
@@ -58,7 +53,20 @@ public class TwoDimensionalIntArray {
         }
     }
 
+    public void doubleAll() {
+        for (int i = 0; i < intArray.length; i++) {
+            for (int j = 0; j < intArray[i].length; j++) {
+                intArray[i][j] *= 2;
+            }
+        }
+    }
+
     public void map(IntFunction function) {
+        for (int i = 0; i < intArray.length; i++) {
+            for (int j = 0; j < intArray[i].length; j++) {
+                intArray[i][j] = function.apply(intArray[i][j]);
+            }
+        }
     }
 
 

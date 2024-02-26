@@ -1,5 +1,6 @@
 package opgave01;
 
+import opgave01.models.Doubler;
 import opgave01.models.TwoDimensionalIntArray;
 
 public class Opgave01 {
@@ -16,6 +17,8 @@ public class Opgave01 {
         System.out.println(twoDimensionalIntArray.sumRow(1));
         System.out.println(twoDimensionalIntArray.sumColumn(3));
         System.out.println(twoDimensionalIntArray.sumAll());
+        twoDimensionalIntArray.map(new Doubler());
+        twoDimensionalIntArray.map(a -> a + 2); //Lambda expression
         twoDimensionalIntArray.print();
 
     }
